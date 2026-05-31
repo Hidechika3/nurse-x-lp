@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>夜勤なし求人を見る前の確認ページ | アイ 看護師キャリア整理室</title>
+  <meta name="description" content="夜勤なし求人を見る前に、オンコール、残業、手取り、教育体制、自分の限界を整理する看護師向け確認ページです。">
+  <style>
+    /* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 */
+    :root {
+      --color-bg: #f5fbf7;
+      --color-paper: #fffdf8;
+      --color-ink: #23302d;
+      --color-muted: #66756f;
+      --color-border: #d7e6de;
+      --color-accent: #2f8f75;
+      --color-accent-dark: #1f6655;
+      --color-coral: #e97863;
+      --color-soft: #e8f4ee;
+      --color-warning: #fff1df;
+      --shadow-soft: 0 24px 70px rgba(38, 73, 61, 0.14);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: var(--font-base);
+      --space-page: clamp(18px, 4vw, 56px);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      overflow-x: clip;
+      background: var(--color-bg);
+      color: var(--color-ink);
+      font-family: var(--font-base);
+      letter-spacing: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      line-height: 1.75;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
+      width: min(1120px, calc(100% - var(--space-page)));
+      margin: 0 auto;
+    }
+
+    .notice {
+      background: var(--color-warning);
+      border-bottom: 1px solid #efd5ad;
+      color: #644820;
+      font-size: 14px;
+      padding: 10px var(--space-page);
+      text-align: center;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+      gap: clamp(28px, 5vw, 64px);
+      align-items: center;
+      min-height: 92vh;
+      padding: clamp(34px, 6vw, 72px) 0 clamp(24px, 4vw, 48px);
+    }
+
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .brand {
+      margin: 0 0 18px;
+      color: var(--color-accent-dark);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6vw, 76px);
+      font-weight: 900;
+      line-height: 1.02;
+      overflow-wrap: anywhere;
+    }
+
+    .lead {
+      max-width: 640px;
+      margin: 24px 0 0;
+      color: var(--color-muted);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.9;
+    }
+
+    .lead strong {
+      color: var(--color-ink);
+      font-weight: 800;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: var(--color-accent);
+      box-shadow: 0 14px 34px rgba(47, 143, 117, 0.24);
+      color: #ffffff;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+      white-space: nowrap;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: var(--color-accent-dark);
+      box-shadow: 0 18px 44px rgba(31, 102, 85, 0.28);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .sub-link {
+      color: var(--color-muted);
+      font-size: 14px;
+    }
+
+    .hero-media {
+      position: relative;
+      min-width: 0;
+    }
+
+    .hero-media img {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .section {
+      padding: clamp(46px, 7vw, 88px) 0;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(20px, 4vw, 56px);
+      align-items: start;
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.12;
+      overflow-wrap: anywhere;
+    }
+
+    .section-text {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 17px;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .check {
+      min-height: 124px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: var(--color-paper);
+      padding: 18px;
+    }
+
+    .check span {
+      display: inline-flex;
+      width: 34px;
+      height: 34px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--color-soft);
+      color: var(--color-accent-dark);
+      font-weight: 900;
+    }
+
+    .check h3 {
+      margin: 16px 0 0;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .story {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(22px, 4vw, 48px);
+      align-items: center;
+      background: var(--color-paper);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: clamp(18px, 4vw, 34px);
+    }
+
+    .story blockquote {
+      margin: 0;
+      border-left: 4px solid var(--color-coral);
+      padding-left: 18px;
+      font-size: clamp(21px, 3vw, 34px);
+      font-weight: 900;
+      line-height: 1.4;
+    }
+
+    .story p {
+      margin: 18px 0 0;
+      color: var(--color-muted);
+    }
+
+    .action {
+      background: var(--color-accent-dark);
+      color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: clamp(26px, 5vw, 54px);
+    }
+
+    .action h2 {
+      color: #ffffff;
+    }
+
+    .action p {
+      max-width: 760px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 17px;
+    }
+
+    .action .button {
+      background: #ffffff;
+      color: var(--color-accent-dark);
+      box-shadow: none;
+    }
+
+    .action .button:hover,
+    .action .button:focus-visible {
+      background: var(--color-warning);
+      color: var(--color-accent-dark);
+    }
+
+    .fineprint {
+      margin-top: 16px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 32px 0 48px;
+      color: var(--color-muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 860px) {
+      .hero,
+      .section-head,
+      .story {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .checklist {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .notice {
+        text-align: left;
+      }
+
+      .button {
+        width: 100%;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.35;
+        padding: 12px 18px;
+      }
+
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .story blockquote {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="notice">この記事には広告・PRリンクを含みます。</div>
+
+  <main class="page">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="brand">アイ 看護師キャリア整理室</p>
+        <h1 id="hero-title">夜勤なし求人を見る前に、5つだけ確認してください。</h1>
+        <p class="lead">
+          夜勤明けに「もう無理かも」と思ったときほど、求人票の
+          <strong>夜勤なし</strong> が救いに見えます。けれど、見る順番を間違えると、
+          夜勤は消えても別のしんどさが残ります。
+        </p>
+        <div class="cta-row">
+          <a class="button" href="https://t.82comb.net/cl?ak=488CI.1.4DU5Z" rel="nofollow sponsored noopener" target="_blank">ジョブメドレー看護師で求人を確認する</a>
+          <span class="sub-link">PR / 求人の有無を確認するためのリンクです</span>
+        </div>
+      </div>
+      <figure class="hero-media">
+        <img src="assets/nightshift-note-thumbnail.png" alt="夜勤明け、もう無理かも。求人を見る前に5つだけ確認">
+      </figure>
+    </section>
+
+    <section class="section" aria-labelledby="checks-title">
+      <div class="section-head">
+        <h2 id="checks-title">求人を見る前に、自分の条件を見る。</h2>
+        <p class="section-text">
+          転職サイトは答えをもらう場所ではなく、求人の有無と条件を確認する道具です。
+          先に自分の条件を書いておくと、紹介された求人に流されにくくなります。
+        </p>
+      </div>
+      <div class="checklist" aria-label="夜勤なし求人を見る前の5チェック">
+        <article class="check"><span>1</span><h3>オンコールはあるか</h3></article>
+        <article class="check"><span>2</span><h3>残業は本当に少ないか</h3></article>
+        <article class="check"><span>3</span><h3>手取りは下がりすぎないか</h3></article>
+        <article class="check"><span>4</span><h3>教育体制はあるか</h3></article>
+        <article class="check"><span>5</span><h3>何が限界なのか</h3></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="story">
+        <img src="assets/nightshift-checklist-slide.png" alt="夜勤なし求人を見る前の5チェック">
+        <div>
+          <blockquote>夜勤から逃げたいときほど、求人票のやさしい言葉だけを信じたくなる。</blockquote>
+          <p>
+            だから、応募より先に条件整理です。夜勤そのものが限界なのか、人間関係なのか、
+            休めないシフトなのか。ここを間違えると、転職しても同じ苦しさを持っていきます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="action-title">
+      <div class="action">
+        <h2 id="action-title">今日やることは、応募ではありません。</h2>
+        <p>
+          まず「もう続けたくないこと」「下げてもいい条件」「下げたくない条件」を3つだけ書いてください。
+          そのあとで、ジョブメドレー看護師で今ある求人を確認すると、ただ眺めるより判断しやすくなります。
+        </p>
+        <div class="cta-row">
+          <a class="button" href="https://t.82comb.net/cl?ak=488CI.1.4DU5Z" rel="nofollow sponsored noopener" target="_blank">ジョブメドレー看護師で求人を確認する</a>
+        </div>
+        <p class="fineprint">
+          PR: リンク先で登録・申込が発生した場合、運営者に成果報酬が発生することがあります。
+          転職するかどうかは、求人条件を確認してから判断してください。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page">
+    <p>アイ 看護師キャリア整理室 / 看護師転職の条件整理メモ</p>
+  </footer>
+</body>
+</html>
