@@ -6,19 +6,24 @@
   <title>夜勤なし求人を見る前の確認ページ | アイ 看護師キャリア整理室</title>
   <meta name="description" content="夜勤なし求人を見る前に、オンコール、残業、手取り、教育体制、自分の限界を整理する看護師向け確認ページです。">
   <style>
-    /* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 */
+    /* Hallmark · pre-emit critique: P5 H5 E5 S5 R5 V5 */
     :root {
-      --color-bg: #f5fbf7;
-      --color-paper: #fffdf8;
+      --color-bg: #fff8f7;
+      --color-paper: #fffdf9;
       --color-ink: #23302d;
       --color-muted: #66756f;
-      --color-border: #d7e6de;
+      --color-border: #eadbd3;
       --color-accent: #2f8f75;
       --color-accent-dark: #1f6655;
       --color-coral: #e97863;
+      --color-rose: #f3a6a0;
+      --color-blush: #ffe9e6;
+      --color-lavender: #f0e8ff;
       --color-soft: #e8f4ee;
       --color-warning: #fff1df;
+      --color-mint: #dcf2e9;
       --shadow-soft: 0 24px 70px rgba(38, 73, 61, 0.14);
+      --shadow-warm: 0 18px 54px rgba(180, 104, 90, 0.16);
       --radius-lg: 22px;
       --radius-md: 14px;
       --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -34,7 +39,8 @@
     body {
       margin: 0;
       overflow-x: clip;
-      background: var(--color-bg);
+      background:
+        linear-gradient(135deg, var(--color-bg) 0%, #f7fff9 48%, #fff4ee 100%);
       color: var(--color-ink);
       font-family: var(--font-base);
       letter-spacing: 0;
@@ -61,12 +67,40 @@
     }
 
     .notice {
-      background: var(--color-warning);
-      border-bottom: 1px solid #efd5ad;
-      color: #644820;
+      background: linear-gradient(90deg, var(--color-blush), var(--color-warning), var(--color-mint));
+      border-bottom: 1px solid var(--color-border);
+      color: #674238;
       font-size: 14px;
       padding: 10px var(--space-page);
       text-align: center;
+    }
+
+    .empathy-band {
+      border-bottom: 1px solid var(--color-border);
+      background: rgba(255, 253, 249, 0.76);
+      backdrop-filter: blur(10px);
+    }
+
+    .empathy-inner {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      width: min(1120px, calc(100% - var(--space-page)));
+      margin: 0 auto;
+      padding: 12px 0;
+      color: #744f48;
+      font-size: 13px;
+      font-weight: 800;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .empathy-inner span {
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background: var(--color-paper);
+      padding: 6px 11px;
     }
 
     .hero {
@@ -84,7 +118,7 @@
 
     .brand {
       margin: 0 0 18px;
-      color: var(--color-accent-dark);
+      color: var(--color-coral);
       font-size: 15px;
       font-weight: 700;
     }
@@ -109,6 +143,24 @@
     .lead strong {
       color: var(--color-ink);
       font-weight: 800;
+    }
+
+    .mini-letter {
+      display: grid;
+      gap: 8px;
+      max-width: 620px;
+      margin-top: 22px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: rgba(255, 253, 249, 0.82);
+      box-shadow: var(--shadow-warm);
+      padding: 18px;
+      color: #5d4d49;
+      font-size: 15px;
+    }
+
+    .mini-letter strong {
+      color: var(--color-coral);
     }
 
     .cta-row {
@@ -159,9 +211,31 @@
       box-shadow: var(--shadow-soft);
     }
 
+    .hero-media::after {
+      content: "求人票を見る前に、まず自分を守る";
+      position: absolute;
+      right: 18px;
+      bottom: -18px;
+      max-width: 280px;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background: var(--color-paper);
+      box-shadow: var(--shadow-warm);
+      color: #6c4f48;
+      padding: 12px 16px;
+      font-size: 14px;
+      font-weight: 900;
+      text-align: center;
+    }
+
     .section {
       padding: clamp(46px, 7vw, 88px) 0;
       border-top: 1px solid var(--color-border);
+    }
+
+    .section.flush {
+      border-top: 0;
+      padding-top: 0;
     }
 
     .section-head {
@@ -185,6 +259,35 @@
       font-size: 17px;
     }
 
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .signal {
+      min-width: 0;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: var(--color-paper);
+      box-shadow: var(--shadow-warm);
+      padding: clamp(18px, 3vw, 26px);
+    }
+
+    .signal p {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 15px;
+    }
+
+    .signal strong {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--color-ink);
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
     .checklist {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -197,6 +300,7 @@
       border: 1px solid var(--color-border);
       border-radius: var(--radius-md);
       background: var(--color-paper);
+      box-shadow: 0 12px 26px rgba(180, 104, 90, 0.08);
       padding: 18px;
     }
 
@@ -207,7 +311,7 @@
       align-items: center;
       justify-content: center;
       border-radius: 999px;
-      background: var(--color-soft);
+      background: linear-gradient(135deg, var(--color-blush), var(--color-soft));
       color: var(--color-accent-dark);
       font-weight: 900;
     }
@@ -244,8 +348,36 @@
       color: var(--color-muted);
     }
 
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .flow-step {
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, var(--color-paper), #fff6f4);
+      padding: 18px;
+    }
+
+    .flow-step b {
+      display: block;
+      color: var(--color-coral);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+
+    .flow-step span {
+      color: var(--color-ink);
+      font-weight: 850;
+      line-height: 1.45;
+    }
+
     .action {
-      background: var(--color-accent-dark);
+      background:
+        linear-gradient(135deg, var(--color-accent-dark), #2b7b69 52%, #8e5b72 100%);
       color: #ffffff;
       border-radius: var(--radius-lg);
       padding: clamp(26px, 5vw, 54px);
@@ -299,6 +431,11 @@
       .checklist {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .signal-grid,
+      .flow {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 520px) {
@@ -321,22 +458,39 @@
       .story blockquote {
         font-size: 24px;
       }
+
+      .hero-media::after {
+        position: static;
+        margin-top: 12px;
+        border-radius: var(--radius-md);
+      }
     }
   </style>
 </head>
 <body>
   <div class="notice">この記事には広告・PRリンクを含みます。</div>
+  <div class="empathy-band" aria-label="看護師の悩み">
+    <div class="empathy-inner">
+      <span>夜勤明けに検索してしまう</span>
+      <span>休みの日も疲れが抜けない</span>
+      <span>求人票の言葉にすがりたくなる</span>
+    </div>
+  </div>
 
   <main class="page">
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="brand">アイ 看護師キャリア整理室</p>
-        <h1 id="hero-title">夜勤なし求人を見る前に、5つだけ確認してください。</h1>
+        <h1 id="hero-title">夜勤明け、「もう無理かも」と思ったあなたへ。</h1>
         <p class="lead">
           夜勤明けに「もう無理かも」と思ったときほど、求人票の
           <strong>夜勤なし</strong> が救いに見えます。けれど、見る順番を間違えると、
           夜勤は消えても別のしんどさが残ります。
         </p>
+        <div class="mini-letter">
+          <strong>先に求人を探す前に。</strong>
+          <span>オンコール、残業、手取り、教育体制。ここを見ないまま選ぶと、今のしんどさを別の職場へ持っていくことがあります。</span>
+        </div>
         <div class="cta-row">
           <a class="button" href="https://t.82comb.net/cl?ak=488CI.1.4DU5Z" rel="nofollow sponsored noopener" target="_blank">ジョブメドレー看護師で求人を確認する</a>
           <span class="sub-link">PR / 求人の有無を確認するためのリンクです</span>
@@ -345,6 +499,30 @@
       <figure class="hero-media">
         <img src="assets/nightshift-note-thumbnail.png" alt="夜勤明け、もう無理かも。求人を見る前に5つだけ確認">
       </figure>
+    </section>
+
+    <section class="section flush" aria-labelledby="signal-title">
+      <div class="section-head">
+        <h2 id="signal-title">これ、私のことかも。</h2>
+        <p class="section-text">
+          「転職したい」とはまだ言い切れない。でも、今の働き方を続ける想像をすると胸が重い。
+          その段階で見るべきなのは、求人の数より先に自分の限界です。
+        </p>
+      </div>
+      <div class="signal-grid">
+        <article class="signal">
+          <strong>帰り道で急に涙が出そうになる</strong>
+          <p>夜勤が終わったのに、次の勤務のことを考えてしまう。休みなのに休めていない感覚。</p>
+        </article>
+        <article class="signal">
+          <strong>「日勤のみ」の文字だけで安心する</strong>
+          <p>でも、オンコールや残業が多ければ、家に帰っても気が抜けないことがあります。</p>
+        </article>
+        <article class="signal">
+          <strong>登録したら楽になると思いたくなる</strong>
+          <p>転職サイトは答えではなく道具。自分の条件がないと、紹介された求人に流されやすくなります。</p>
+        </article>
+      </div>
     </section>
 
     <section class="section" aria-labelledby="checks-title">
@@ -374,6 +552,22 @@
             休めないシフトなのか。ここを間違えると、転職しても同じ苦しさを持っていきます。
           </p>
         </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="flow-title">
+      <div class="section-head">
+        <h2 id="flow-title">焦っているときほど、順番を固定する。</h2>
+        <p class="section-text">
+          しんどい時の求人探しは、条件の良い言葉に引っぱられます。
+          だから先に、選び方を固定しておきます。
+        </p>
+      </div>
+      <div class="flow">
+        <div class="flow-step"><b>STEP 1</b><span>もう続けたくないことを書く</span></div>
+        <div class="flow-step"><b>STEP 2</b><span>下げてもいい条件を分ける</span></div>
+        <div class="flow-step"><b>STEP 3</b><span>下げたくない条件を決める</span></div>
+        <div class="flow-step"><b>STEP 4</b><span>求人の有無だけを確認する</span></div>
       </div>
     </section>
 
